@@ -1,19 +1,6 @@
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-
-const Model = () => {
-  const gltf = useGLTF('https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/dumbbell/model.gltf');
-  return <primitive object={gltf.scene} scale={2} position={[0, -1, 0]} />;
-};
-
-const LoadingFallback = () => (
-  <div className="flex items-center justify-center w-full h-full">
-    <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-500" />
-  </div>
-);
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
