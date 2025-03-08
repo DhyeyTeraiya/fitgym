@@ -26,10 +26,11 @@ const Hero = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+            filter: 'brightness(0.8) contrast(1.1)',
           }}
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/90 backdrop-blur-[2px]" />
 
       <motion.div
         style={{ opacity }}

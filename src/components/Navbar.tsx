@@ -20,7 +20,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/10 backdrop-blur-md shadow-lg border-b border-white/10' : 'bg-transparent'}`}
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-md shadow-lg border-b border-white/10' : 'bg-black/30'}`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -31,7 +31,7 @@ const Navbar = () => {
             >
               <Dumbbell size={32} className="text-red-500 transition-colors group-hover:text-red-400" />
             </motion.div>
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+            <span className="text-2xl font-bold text-white">
               PowerFit Gym
             </span>
           </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
               <motion.a
                 key={item}
                 href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}
-                className="relative text-white hover:text-red-500 transition-colors"
+                className="relative text-gray-100 hover:text-red-500 transition-colors font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
