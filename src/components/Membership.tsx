@@ -46,7 +46,7 @@ const Membership = () => {
           {plans.map((plan, index) => (
             <motion.div 
               key={index} 
-              className="bg-white rounded-lg shadow-lg p-8 transform-gpu"
+              className="bg-white/30 backdrop-blur-sm rounded-lg shadow-lg p-8 transform-gpu border border-white/20"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -67,7 +67,7 @@ const Membership = () => {
                 ))}
               </ul>
               <motion.button 
-                className="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors"
+                className="w-full bg-red-600/90 backdrop-blur-sm text-white py-3 rounded-lg hover:bg-red-700/90 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}>
                 Choose Plan

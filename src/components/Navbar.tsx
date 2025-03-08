@@ -20,7 +20,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/10 backdrop-blur-md shadow-lg border-b border-white/10' : 'bg-transparent'}`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -83,7 +83,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/95 backdrop-blur-lg"
+            className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/10"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
               {['Home', 'About', 'Trainers', 'Membership', 'Contact'].map((item) => (

@@ -9,7 +9,7 @@ const About = () => {
         <h2 className="text-4xl font-bold text-center mb-16">Why Choose PowerFit?</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div 
-            className="text-center p-6 bg-white rounded-lg shadow-lg transform-gpu"
+            className="text-center p-6 bg-white/30 backdrop-blur-sm rounded-lg shadow-lg transform-gpu border border-white/20"
             whileHover={{ scale: 1.05, rotateY: 5 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ const About = () => {
             <p>Train on your schedule with round-the-clock access to our facilities</p>
           </motion.div>
           <motion.div 
-            className="text-center p-6 bg-white rounded-lg shadow-lg transform-gpu"
+            className="text-center p-6 bg-white/30 backdrop-blur-sm rounded-lg shadow-lg transform-gpu border border-white/20"
             whileHover={{ scale: 1.05, rotateY: 5 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ const About = () => {
             <p>Get guidance from certified professional trainers</p>
           </motion.div>
           <motion.div 
-            className="text-center p-6 bg-white rounded-lg shadow-lg transform-gpu"
+            className="text-center p-6 bg-white/30 backdrop-blur-sm rounded-lg shadow-lg transform-gpu border border-white/20"
             whileHover={{ scale: 1.05, rotateY: 5 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ const About = () => {
             <p>State-of-the-art facilities with the latest fitness equipment</p>
           </motion.div>
           <motion.div 
-            className="text-center p-6 bg-white rounded-lg shadow-lg transform-gpu"
+            className="text-center p-6 bg-white/30 backdrop-blur-sm rounded-lg shadow-lg transform-gpu border border-white/20"
             whileHover={{ scale: 1.05, rotateY: 5 }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
