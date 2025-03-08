@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowRight, PlayCircle, Users, Award, Clock, Dumbbell } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Hero = () => {
@@ -12,6 +12,13 @@ const Hero = () => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
+
+  const stats = [
+    { icon: Users, value: '5000+', label: 'Active Members' },
+    { icon: Award, value: '50+', label: 'Expert Trainers' },
+    { icon: Clock, value: '24/7', label: 'Access' },
+    { icon: Dumbbell, value: '100+', label: 'Equipment' },
+  ];
 
   return (
     <section id="home" className="h-screen relative overflow-hidden">
@@ -44,16 +51,35 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl sm:text-6xl md:text-8xl font-extrabold mb-6 sm:mb-8 leading-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 sm:mb-8 leading-tight relative group"
+            whileHover={{ scale: 1.02 }}
+          >
+            <motion.span 
+              className="bg-clip-text text-transparent bg-gradient-to-r from-white via-red-400 to-gray-300 inline-block"
+              style={{
+                backgroundSize: '200% 100%',
+                animation: 'gradient 8s linear infinite',
+              }}
+              whileHover={{ x: 10, rotateY: 10 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
               Transform Your Body,
-            </span>
+            </motion.span>
             <br />
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-red-500 inline-block">
+              className="text-red-500 inline-block relative"
+              whileHover={{ x: 15, rotateY: 15 }}
+              style={{
+                background: 'linear-gradient(90deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)',
+                backgroundSize: '200% 100%',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                animation: 'gradient 8s linear infinite'
+              }}
+            >
               Transform Your Life
             </motion.span>
           </motion.h1>
@@ -70,7 +96,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
             <motion.button
               whileHover={{ scale: 1.05, backgroundColor: '#dc2626' }}
               whileTap={{ scale: 0.95 }}
@@ -86,6 +112,35 @@ const Hero = () => {
               Watch Video
               <PlayCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </motion.button>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 1.8 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 hover:border-red-500/30 transition-all duration-300"
+              >
+                <div className="flex flex-col items-center justify-center">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 1, type: "spring" }}
+                    className="mb-2"
+                  >
+                    <stat.icon className="w-6 h-6 text-red-500" />
+                  </motion.div>
+                  <p className="text-2xl font-bold text-white mb-1">{stat.value}</p>
+                  <p className="text-sm text-gray-300">{stat.label}</p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </motion.div>
@@ -118,3 +173,11 @@ class ErrorBoundary extends React.Component {
 }
 
 export default Hero;
+
+<style jsx>{`
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+`}</style>
