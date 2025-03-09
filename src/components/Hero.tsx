@@ -105,11 +105,13 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
+
             <motion.button
               whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold transition-all duration-300 flex items-center gap-2 w-full sm:w-64 justify-center border border-white/30 shadow-lg hover:shadow-white/20">
-              Watch Video
+              className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg font-semibold transition-all duration-300 flex items-center gap-2 w-full sm:w-64 justify-center border border-white/30 shadow-lg hover:shadow-white/20"
+              onClick={() => window.open('https://github.com/DhyeyTeraiya/fitgym', '_blank')}>
+              Github Repo
               <PlayCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </motion.button>
           </motion.div>

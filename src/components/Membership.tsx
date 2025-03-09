@@ -1,3 +1,5 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -38,6 +40,12 @@ const plans = [
 ];
 
 const Membership = () => {
+  const navigate = useNavigate();
+
+  const handlePlanSelection = (plan: typeof plans[0]) => {
+    navigate('/payment', { state: { plan } });
+  };
+
   return (
     <section id="membership" className="py-20 bg-gray-100">
       <div className="container mx-auto px-4">
@@ -67,6 +75,7 @@ const Membership = () => {
                 ))}
               </ul>
               <motion.button 
+                onClick={() => handlePlanSelection(plan)}
                 className="w-full bg-red-600/90 backdrop-blur-sm text-white py-3 rounded-lg hover:bg-red-700/90 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}>

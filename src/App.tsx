@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import ChatBot from './components/ChatBot';
 import Login from './components/Login';
 import Register from './components/Register';
+import PaymentPage from './components/PaymentPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/" element={
             <>
               <Hero />
