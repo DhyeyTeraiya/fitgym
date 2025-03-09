@@ -8,10 +8,6 @@
       "outputDirectory": "dist"
     }
   }],
-  "routes": [{
-    "src": "/(.*)",
-    "dest": "/"
-  }],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
